@@ -3,81 +3,115 @@ isChild: true
 anchor: composer_and_packagist
 ---
 
-## Composer and Packagist {#composer_and_packagist_title}
+## Composer och Packagist {#composer_and_packagist_title}
 
-Composer is a **brilliant** dependency manager for PHP. List your project's dependencies in a `composer.json` file and, with a few simple commands, Composer will automatically download your project's dependencies and setup autoloading for you.
+Composer är en **briljant** beroendehanterare för PHP. Lista bara ditt projekts beroenden i filen `composer.json` och, 
+med några enkla kommandon kommer Composer att automatiskt ladda ner ditt projekts beroenden och ställa in autoladdning åt dig.
 
-There are already a lot of PHP libraries that are compatible with Composer, ready to be used in your project. These "packages" are listed on [Packagist][1], the official repository for Composer-compatible PHP libraries.
+Det finns redan en mängd PHP-bibliotek som är kompatibla med Composer, redo att användas i dina egna projekt.
+Dessa "paket" finns listade i [Packagist][1], det officiella arkivet för Composer-kompatible PHP-bibliotek.
 
-### How to Install Composer
+### Hur man installerar Composer
 
-You can install Composer locally (in your current working directory; though this is no longer recommended) or globally (e.g. /usr/local/bin). Let's assume you want to install Composer locally. From your project's root directory:
+Du kan installera Composer lokalt (i din arbetskatalog; fast detta inte rekommenderas) eller globalt (d.v.s. i /usr/local/bin). 
+Låt oss anta att du vill installera Composer lokalt. Från ditt projekts rootkatalog:
 
     curl -s https://getcomposer.org/installer | php
 
-This will download `composer.phar` (a PHP binary archive). You can run this with `php` to manage your project dependencies. <strong>Please Note:</strong> If you pipe downloaded code directly into an interpreter, please read the code online first to confirm it is safe.
+Det kommandot kommer att ladda hem `composer.phar` (ett binärt PHP-arkiv). Du kan 
+köra detta med `php` för att hantera ditt projekts beroenden. <strong>Notera:</strong> 
+Om du skickar in nedladded kod direkt i tolken, försäkra dig först om att koden är säker genom att läsa den på nätet.
 
-#### Installing on Windows
-For Windows users the easiest way to get up and running is to use the [ComposerSetup][6] installer, which performs a global install and sets up your `$PATH` so that you can just call `composer` from any directory in your command line.
+#### Installation i Windows
 
-### How to Install Composer (manually)
+För Windowsanvändare är det enklast att använda installationsprogrammet [ComposerSetup][6], 
+som installerar Composer globalt och ställer in `$PATH` så att du kan anropa `composer` från 
+kommandoraden i vilken katalog som helst.
 
-Manually installing Composer is an advanced technique; however, there are various reasons why a developer might prefer this method vs. using the interactive installation routine. The interactive installation checks your PHP installation to ensure that:
+### Hur man installerar Composer (manuellt)
 
-- a sufficient version of PHP is being used
-- `.phar` files can be executed correctly
-- certain directory permissions are sufficient
-- certain problematic extensions are not loaded
-- certain `php.ini` settings are set
+Att installera Composer manuellt är avancerat; dock finns det olika orsaker till varför en utvecklare kan tänkas föredra denna metod
+framför en interaktiv installationsrutin. Den interaktiva installationen undersöker PHP-installationen för att säkra följande:
 
-Since a manual installation performs none of these checks, you have to decide whether the trade-off is worth it for you. As such, below is how to obtain Composer manually:
+- en lämplig version av PHP används
+- att `.phar`-filer kan köras korrekt
+- att tillräckliga åtkomsträttigheter är satta för vissa kataloger
+- att vissa, problematiska tillägg inte är laddade
+- att vissa inställningar är gjorda i `php.ini`
+
+Då en manuell installation inte gör något av detta måste du bestämma dig om det är värt det för dig.
+Om du vill installera manuellt, gör du enligt följande:
 
     curl -s https://getcomposer.org/composer.phar -o $HOME/local/bin/composer
     chmod +x $HOME/local/bin/composer
 
-The path `$HOME/local/bin` (or a directory of your choice) should be in your `$PATH` environment variable. This will result in a `composer` command being available.
+Sökvägen `$HOME/local/bin` (eller en katalog du själv väljer) bör finnas med i 
+miljövariabeln `$PATH`. Det gör att kommandot `composer` är tillgängligt från 
+vilken katalog som helst.
 
-When you come across documentation that states to run Composer as `php composer.phar install`, you can substitute that with:
+När du hittar dokumentation som säger åt dig att köra Composer som `php composer.phar install`, 
+kan du ersätta det med:
 
     composer install
     
-This section will assume you have installed composer globally.
+Under förutsättning att du installerat Composer globalt.
 
-### How to Define and Install Dependencies
+### Hur man definierar och installerar beroenden
 
-Composer keeps track of your project's dependencies in a file called `composer.json`. You can manage it by hand if you like, or use Composer itself. The `composer require` command adds a project dependency and if you don't have a `composer.json` file, one will be created. Here's an example that adds [Twig][2] as a dependency of your project.
+Composer håller reda på ditt projekts beroenden med hjälp av filen `composer.json`. 
+Du kan redigera filen för hand om du vill, eller använda Composer. Kommandot 
+`composer require` lägger till ett projektberoende och om du inte då redan skapat 
+filen `composer.json`, kommer den att skapas åt dig. Här är ett exempel som 
+lägger till [Twig][2] som ett beroende till ditt projekt:
 
 	composer require twig/twig:~1.8
 
-Alternatively the `composer init` command will guide you through creating a full `composer.json` file for your project. Either way, once you've created your `composer.json` file you can tell Composer to download and install your dependencies into the `vendors/` directory. This also applies to projects you've downloaded that already provide a `composer.json` file:
+Alternativt kan du använda kommandot `composer init` för att skapa en komplett 
+`composer.json`-fil för ditt projekt. Oavsett hur du gör, så kan du efter att 
+filen skapats kommendera Composer att ladda hem och installera dina beroenden 
+till katalogen `vendors/`. Det här gäller även för projekt du laddat hem som 
+redan har filen `composer.json`:
 
     composer install
 
-Next, add this line to your application's primary PHP file; this will tell PHP to use Composer's autoloader for your project dependencies.
+Lägg sedan till denna rad i din applikations huvudsakliga PHP-fil; det här berättar för PHP att den ska använda
+Composers autoladdning för dina projektberoenden:
 
 {% highlight php %}
 <?php
 require 'vendor/autoload.php';
 {% endhighlight %}
 
-Now you can use your project dependencies, and they'll be autoloaded on demand.
+Nu kan du använda dina projektberoenden, och de autoladdas vid behov.
 
-### Updating your dependencies
+### Uppdatera dina beroenden
 
-Composer creates a file called `composer.lock` which stores the exact version of each package it downloaded when you first ran `php composer.phar install`. If you share your project with other coders and the `composer.lock` file is part of your distribution, when they run `php composer.phar install` they'll get the same versions as you. To update your dependencies, run `php composer.phar update`.
+Composer skapar filen `composer.lock` som sparar information om exakt vilka versioner 
+av de olika paketen som laddades ner när du först körde `php composer.phar install`. 
+Om du delar dina projekt med andra utvecklare och filen `composer.lock` finns med 
+som en del i din distribution, kommer de att få samma versioner som du när de kör 
+`php composer.phar install`. För att uppdatera dina beroenden, kör du
+`php composer.phar update`.
 
-This is most useful when you define your version requirements flexibly. For instance a version requirement of ~1.8  means "anything newer than 1.8.0, but less than 2.0.x-dev". You can also use the `*` wildcard as in `1.8.*`. Now Composer's `php composer.phar update` command will upgrade all your dependencies to the newest version that fits the restrictions you define.
+Det här är användbart när du definierar versionskraven flexibelt. Till exempel 
+betyder versionskravet ~1.8 "allting efter version 1.8, men innan 2.0.x-dev". 
+Du kan också använda uttrycket `*` som till exempel `1.8.*`. Nu uppgraderar 
+kommandot `php composer.phar update` alla dina beroenden till den senaste versionen 
+som matchar de begränsningar du definierar.
 
-### Update Notifications
+### Uppdateringsmeddelanden
 
-To receive notifications about new version releases you can sign up for [VersionEye][3], a web service that can monitor 
-your GitHub and BitBucket accounts for `composer.json` files and send emails with new package releases.
+För att ta emot meddelanden om nya versioner kan du registrera dig hos [VersionEye][3], 
+en webbtjänst som kan övervaka dina GitHub och BitBucket-kontons `composer.json`-filer 
+och skicka e-postmeddelanden med nya paketutgåvor.
 
-### Checking your dependencies for security issues
+### Övervaka säkerhetsproblem i dina beroenden
 
-The [Security Advisories Checker][4] is a web service and a command-line tool, both will examine your `composer.lock` file and tell you if you need to update any of your dependencies.
+[Security Advisories Checker][4] finns som en webbtjänst och ett kommandoradsverktyg, och båda 
+undersöker filen `composer.lock` och meddelar dig om du behöver uppdatera några av dina 
+beroenden.
 
-* [Learn about Composer][5]
+* [Lär dig om Composer][5]
 
 [1]: http://packagist.org/
 [2]: http://twig.sensiolabs.org
