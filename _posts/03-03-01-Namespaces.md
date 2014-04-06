@@ -9,7 +9,7 @@ PHP-gemenskapen har som sagt många utvecklare som skriver mängder av koder. De
 i ett bibliotek kan använda samma namn som en klass i ett annat bibliotek. När båda biblioteken används 
 i samma namnutrymme får man en namnkollision, vilket orsakar uppenbara problem.
 
-_Namnutrymmen_ löser detta problem. Som det står PHP:s referensmanual kan namnutrymmen liknas vid 
+_Namnutrymmen_ löser detta problem. Som det står i PHP:s referensmanual kan namnutrymmen liknas vid 
 kataloger i operativsystem som skapar olika _namnutrymmen_ för olika filer; två filer med samma namn 
 kan samexistera om de sparas i två olika kataloger. På samma sätt kan två klasser med samma namn samexistera 
 om de är tilldelade olika namnutrymmen. Det är så enkelt.
