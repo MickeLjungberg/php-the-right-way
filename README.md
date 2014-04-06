@@ -1,80 +1,87 @@
-# PHP: The Right Way
+# PHP: På Rätt Sätt
 
-## Overview
+## Översikt
 
-This is the GitHub Pages repository for the _PHP: The Right Way_ project.
+De här sidorna innehåller GitHub-arkivet för projektet _PHP: På Rätt Sätt_.
 
-* This website is a Jekyll project.
-* Each section and sub-section are a Markdown file in `_posts/`.
-* Sub-sections have `isChild: true` in their front matter.
-* The navigation and page structure are automatically generated.
+* Den här webbplatsen är ett Jekyll-projekt.
+* Varje sektion och undersektion är en märkesfil i `_posts/`.
+* Undersektioner är markerade med `isChild: true` i sina front matter.
+* Navigationen och sidstrukturen genereras automatiskt.
 
-## Spread the Word!
+## Sprid ordet!
 
-_PHP: The Right Way_ has web banner images you can use on your website. Show your support, and let new PHP
-developers know where to find good information!
+Det finns bannerbilder hos _PHP: På Rätt Sätt_ som du kan använda i din egen 
+webbplats. Visa ditt stöd, och låt nya PHP-utvecklare veta var de kan hitta 
+bra information!
 
-[See Banner Images](http://www.phptherightway.com/banners.html)
+[Visa Bannerbilder](http://www.phptherightway.com/banners.html)
 
-## How to Contribute
+## Hur man kan bidra
 
-1. Fork and edit
-2. Optionally install [Ruby](https://rvm.io/rvm/install/) with [Jekyll](https://github.com/mojombo/jekyll/) gem to preview locally
-3. Submit pull request for consideration
+1. Använd Fork och Redigera
+2. Optimalt är att installera [Ruby](https://rvm.io/rvm/install/) med [Jekyll](https://github.com/mojombo/jekyll/) för att förhandsvisa lokalt
+3. Skicka Pull-förfrågningar för antagande
 
-### Contributor Style Guide
+### Stilregler för bidrag
 
-1. Use American English spelling (*primary English repo only*)
-2. Use four (4) spaces to indent text; do not use tabs.
-3. Wrap all text to 120 characters.
-4. Code samples should adhere to PSR-1 or higher.
+1. Använd stavning för Amerikansk Engelska (*huvudarkivet enbart*).
+2. Använd fyra (4) mellanslag vid textindrag; använd inte tabbar.
+3. Bryt all text vid 120 tecken.
+4. Kodexempel bör följa PSR-1 eller högre.
 
-## Where
+## Var
 
 <http://www.phptherightway.com>
 
-* [English](http://www.phptherightway.com)
-* [Catalan] (http://ca.phptherightway.com)
-* [Chinese](http://wulijun.github.com/php-the-right-way)
-* [Japanese] (http://ja.phptherightway.com)
-* [Korean] (http://wafe.github.io/php-the-right-way)
-* [Italian] (http://it.phptherightway.com)
-* [Polish](http://pl.phptherightway.com)
-* [Portuguese](http://br.phptherightway.com)
-* [Russian] (http://getjump.github.io/ru-php-the-right-way)
-* [Spanish] (http://es.phptherightway.com)
-* [Ukrainian](http://iflista.github.com/php-the-right-way)
-* [Bulgarian](http://bg.phptherightway.com)
-* [German] (http://rwetzlmayr.github.io/php-the-right-way)
-* [Turkish](http://hkulekci.github.io/php-the-right-way/)
-* [Slovenian](http://sl.phptherightway.com)
+* [Engelska](http://www.phptherightway.com)
+* [Catalanska] (http://ca.phptherightway.com)
+* [Kinesiska](http://wulijun.github.com/php-the-right-way)
+* [Japanska] (http://ja.phptherightway.com)
+* [Koreanska] (http://wafe.github.io/php-the-right-way)
+* [Italienska] (http://it.phptherightway.com)
+* [Polska](http://pl.phptherightway.com)
+* [Portugisiska](http://br.phptherightway.com)
+* [Ryska] (http://getjump.github.io/ru-php-the-right-way)
+* [Spanska] (http://es.phptherightway.com)
+* [Ukrainska](http://iflista.github.com/php-the-right-way)
+* [Bulgariska](http://bg.phptherightway.com)
+* [Tyska] (http://rwetzlmayr.github.io/php-the-right-way)
+* [Turkiska](http://hkulekci.github.io/php-the-right-way/)
+* [Slovenska](http://sl.phptherightway.com)
 
-### Translations
+### Översättningar
 
-If you are interested in translating _PHP: The Right Way_, fork this repo on GitHub and publish your localized fork to your own GitHub Pages account. We'll link to your translation from the primary document.
+Om du skulle vilja hjälpa till med översättning av _PHP: På Rätt Sätt_, skapa 
+en fork av arkivet på GitHub och publicera din fork i ditt eget GitHub-konto. 
+Vi länkar till din översättning från vårt huvuddokumentet.
 
-To avoid fragmentation and reader confusion, please choose one of these options:
+För att undvika fragmentering och förvirring för läsaren, var god välj ett av 
+följande alternativ:
 
-1. We link to your GitHub Pages fork with `[username].github.com/php-the-right-way`
-2. We link to your GitHub Pages fork with a subdomain (e.g. "ru.phptherightway.com")
+1. Vi länkar till din fork i GitHub med `[användarnamn].github.com/php-the-right-way`
+2. Vi länkar till din form i GitHub med en subdomän (d.v.s. "ru.phptherightway.com")
 
-If you use a subdomain, enter the subdomain into the `CNAME` file, and ask us to setup DNS for you. If you do not use a subdomain, remove the `CNAME` file entirely else your fork will not build when pushed.
+Om du tänker använda en subdomän, måste du lägga till subdomänen i filen 
+`CNAME` och be oss sätta upp DNS för dig. Om du inte använder en subdomän måste 
+du radera filen `CNAME` helt, annars kommer inte din fork att tas med när 
+projektet byggs.
 
-When your translation is ready, open an issue on the Issue Tracker to let us know.
+När din översättning är redo öppnar du en Issue Tracker för att meddela oss.
 
-## Why
+## Varför
 
-There's been a lot of discussion lately about how the PHP community lacks sufficient, credible information for programmers new to PHP. This repository aims to solve this problem.
+Det har varit många diskussioner på sistone om att PHP-världen saknar tillräcklig, viktig information för nya PHP-utvecklare. Det här arkivet ämnar att lösa detta problem.
 
-## Who
+## Vem
 
-My name is [Josh Lockhart](http://twitter.com/codeguy). I'm the author of the [Slim Framework](http://www.slimframework.com/), and I work for [New Media Campaigns](http://www.newmediacampaigns.com/).
+Mitt namn är [Josh Lockhart](http://twitter.com/codeguy). Jag är skaparen bakom [Ramverket Slim](http://www.slimframework.com/), och jag arbetar för [New Media Campaigns](http://www.newmediacampaigns.com/).
 
-### Collaborators
+### Medarbetare
 
 * [Kris Jordan](http://krisjordan.com/)
 * [Phil Sturgeon](http://philsturgeon.co.uk/)
 
-## License
+## Licens
 
 [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/)

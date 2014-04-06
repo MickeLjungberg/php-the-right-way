@@ -1,50 +1,54 @@
-# Welcome
+# Välkommen
 
-There's a lot of outdated information on the Web that leads new PHP users astray,
-propagating bad practices and insecure code. _PHP: The Right Way_ is an easy-to-read,
-quick reference for PHP popular coding standards, links to authoritative tutorials
-around the Web and what the contributors consider to be best practices at the present
-time.
+Mycket av den information som finns på nätet är utdaterad, och kan leda nya 
+PHP-användare på villovägar genom att förespråka dåliga vanor och osäkra 
+koder. _PHP: På Rätt sätt_ är en lättäst snabbreferens för bra kodstandarder 
+inom PHP, länkar till aktuella rekommenderade handledningar på nätet och vad 
+produktiva utvecklare ser som de bästa metoderna just nu.
 
-_There is no canonical way to use PHP_. This website aims to introduce new PHP
-developers to some topics which they may not discover until it is too late, and aims
-to give seasoned pros some fresh ideas on those topics they've been doing for years
-without ever reconsidering. This website will also not tell you which tools to use, but
-instead offer suggestions for multiple options, when possible explaining the differences
-in approach and use-case.
+_Det finns inget vedertaget sätt att använda PHP_. Den här webbplatsen vill 
+introducera nya PHP-utvecklare för sådant de annars kanske inte upptäcker 
+förrän det är för sent, och vill samtidigt ge erfarna proffs lite nya idéer 
+kring lösningar de använt i många år utan vidare eftertanke. Den här 
+webbplatsen kommer inte att berätta för dig vilka verktyg du ska använda, utan 
+istället erbjuda många olika alternativa förslag, och där det är möjligt 
+förklara skillnader i tillvägagångssätt och användarfall.
 
-This is a living document and will continue to be updated with more helpful information
-and examples as they become available.
+Det här är ett levande dokument och kommer att uppdateras med mer hjälpsam 
+information och exempel allt eftersom.
 
-## Translations
+## Översättningar
 
-_PHP: The Right Way_ is (or soon will be) translated into many different languages:
+_PHP: På Rätt Sätt_ finns (eller kommer att finnas) översatt till många olika 
+språk:
 
-* [English](http://www.phptherightway.com)
-* [Chinese (Simplified)](http://wulijun.github.com/php-the-right-way)
-* [Japanese](http://ja.phptherightway.com)
-* [Korean](http://wafe.github.io/php-the-right-way/)
-* [Italian](http://it.phptherightway.com/)
-* [Polish](http://pl.phptherightway.com/)
-* [Portuguese](http://br.phptherightway.com/)
-* [Russian](http://getjump.github.io/ru-php-the-right-way)
-* [Spanish](http://phpdevenezuela.github.io/php-the-right-way/)
-* [Ukrainian](http://iflista.github.com/php-the-right-way/)
-* [Bulgarian](http://bg.phptherightway.com/)
-* [German](http://rwetzlmayr.github.io/php-the-right-way/)
-* [Turkish](http://hkulekci.github.io/php-the-right-way/)
-* [Slovenian](http://sl.phptherightway.com)
+* [Engelska](http://www.phptherightway.com)
+* [Kinesiska (Förenklad)](http://wulijun.github.com/php-the-right-way)
+* [Japanska](http://ja.phptherightway.com)
+* [Koreanska](http://wafe.github.io/php-the-right-way/)
+* [Italienska](http://it.phptherightway.com/)
+* [Polska](http://pl.phptherightway.com/)
+* [Portugisiska](http://br.phptherightway.com/)
+* [Ryska](http://getjump.github.io/ru-php-the-right-way)
+* [Spanska](http://phpdevenezuela.github.io/php-the-right-way/)
+* [Ukrainska](http://iflista.github.com/php-the-right-way/)
+* [Bulgariska](http://bg.phptherightway.com/)
+* [Tyska](http://rwetzlmayr.github.io/php-the-right-way/)
+* [Turkiska](http://hkulekci.github.io/php-the-right-way/)
+* [Slovenska](http://sl.phptherightway.com)
 
-## How to Contribute
+## Hur man bidrar
 
-Help make this website the best resource for new PHP programmers! [Contribute on GitHub][1]
+Hjälp till att göra den webbplatsen till den bästa resursen för nya PHP-utvecklare! 
+[Hjälp till via GitHub][1]
 
-## Spread the Word!
+## Sprid ordet!
 
-_PHP: The Right Way_ has web banner images you can use on your website. Show your support, and let new PHP developers
-know where to find good information!
+Det finns bannerbilder hos _PHP: På Rätt Sätt_ som du kan använda i din egen 
+webbplats. Visa ditt stöd, och låt nya PHP-utvecklare veta vad de kan hitta 
+bra information!
 
-[See Banner Images][2]
+[Visa Bannerbilder][2]
 
 [1]: https://github.com/codeguy/php-the-right-way/tree/gh-pages
 [2]: /banners.html
