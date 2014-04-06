@@ -2,38 +2,41 @@
 anchor: code_style_guide
 ---
 
-# Code Style Guide  {#code_style_guide_title}
+# Kodstilmall  {#code_style_guide_title}
 
-The PHP community is large and diverse, composed of innumerable libraries, frameworks, and components. It is common for
-PHP developers to choose several of these and combine them into a single project. It is important that PHP code adhere
-(as close as possible) to a common code style to make it easy for developers to mix and match various libraries for
-their projects.
+PHP-gemenskapen är stor och varierad, med oräkneligt antal bibliotek, ramverk och komponenter. Det är vanligt bland 
+PHP-utvecklare att välja och vraka mellan dessa och kombinera dem i egna projekt. Det är därför viktigt att PHP-koder 
+följer (så troget som möjligt) vanliga kodstilar för att underlätta för utvecklare när de mixar och parar ihop bibliotek 
+i sina egna projekt.
 
-The [Framework Interop Group][fig] has proposed and approved a series of style recommendations. Not all of them related 
-to code-style, but those that do are [PSR-0][psr0], [PSR-1][psr1], [PSR-2][psr2] and [PSR-4][psr4]. These recommendations 
-are merely a set of rules that some projects like Drupal, Zend, Symfony, CakePHP, phpBB, AWS SDK, FuelPHP, Lithium, 
-etc are starting to adopt. You can use them for your own projects, or continue to use your own personal style.
+[Framework Interop Group][fig] har föreslagit och godkänt en serie rekommendationer. Inte alla relaterar till 
+kodstilar, men följande rekommendationer gör det: [PSR-0][psr0], [PSR-1][psr1], [PSR-2][psr2] och [PSR-4][psr4]. 
+Dessa rekommendationer är bara en uppsättning regler som projekt som Drupal, Zend, Symfony, CakePHP, phpBB, AWS 
+SDK, FuelPHP, Lithium, o.s.v. har börjar använda sig av. Du kan använda dem i dina egna projekt, eller fortsätta 
+använda din egen personliga stil.
 
-Ideally you should write PHP code that adheres to a known standard. This could be any combination of PSR's, or one 
-of the coding standards made by PEAR or Zend. This means other developers can easily read and work with your code, 
-and applications that implement the components can have consistency even when working with lots of third-party code. 
+Idealet är att du skriver PHP-koder som följer en känd standard. Det kan vara en kombination av PSR, eller en 
+av kodstandarderna för PEAR eller Zend. Om du gör det så kan andra utvecklare enkelt läsa och arbeta med dina 
+koder, och applikationer som implementerar komponenter förblir konsekventa även när de använder många tredjepartskoder.
 
-* [Read about PSR-0][psr0]
-* [Read about PSR-1][psr1]
-* [Read about PSR-2][psr2]
-* [Read about PSR-4][psr4]
-* [Read about PEAR Coding Standards][pear-cs]
-* [Read about Zend Coding Standards][zend-cs]
-* [Read about Symfony Coding Standards][symfony-cs]
+* [Läs om PSR-0][psr0]
+* [Läs om PSR-1][psr1]
+* [Läs om PSR-2][psr2]
+* [Läs om PSR-4][psr4]
+* [Läs om kodstandarderna i PEAR][pear-cs]
+* [Läs om kodstandarderna i Zend][zend-cs]
+* [Läs om kodstandarderna i Symfony][symfony-cs]
 
-You can use [PHP_CodeSniffer][phpcs] to check code against any one of these recommendations, and plugins for text editors 
-like [Sublime Text 2][st-cs] to be given real time feedback. 
+Du kan använda [PHP_CodeSniffer][phpcs] för att validera koder gentemot vilken 
+som helst av dessa rekommendationer, och det finns tillägg till textverktyg som 
+[Sublime Text 2][st-cs] som ger respons i realtid.
 
-Use Fabien Potencier's [PHP Coding Standards Fixer][phpcsfixer] to automatically modify your code syntax so that it
-conforms to these standards, saving you from fixing each problem by hand.
+Använd Fabien Potenciers [PHP Coding Standards Fixer][phpcsfixer] för att automatiskt
+ändra din kodsyntax så att den följer dessa standarder, så behöver du inte fixa varenda
+problem på egen hand.
 
-English is preferred for all symbol names and code infrastructure. Comments may be written in any language easily readable 
-by all current and future parties who may be working on the codebase.
+Engelska är föredraget för alla symbolnamn och kodstrukturer. Kommentarer kan skrivas i vilket språk som nu är 
+lättläst för alla nuvarande och framtida parter som kan tänkas arbeta med koderna.
 
 [fig]: http://www.php-fig.org/
 [psr0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
