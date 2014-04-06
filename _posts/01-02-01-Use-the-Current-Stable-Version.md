@@ -4,9 +4,14 @@ isChild: true
 anchor: use_the_current_stable_version
 ---
 
-## Use the Current Stable Version (5.5) {#use_the_current_stable_version_title}
+## Använd den aktuella stabila versionen (5.5) {#use_the_current_stable_version_title}
 
-If you are just getting started with PHP make sure to start with the current stable release of [PHP 5.5][php-release]. PHP has made great strides adding powerful [new features](#language_highlights) over the last few years. Don't let the minor version number difference between 5.2 and 5.5 fool you, it represents _major_ improvements. If you are looking for a function or its usage, the documentation on the [php.net][php-docs] website will have the answer.
+Om du precis har börjat programmera i PHP så försäkra dig om att du har den 
+senaste stabila version av [PHP 5.5][php-release]. PHP har gjort stora framsteg 
+under de senaste åren med kraftfulla [nya delar](#language_highlights). Bli inte 
+lurad av att versionsnumret bara ändrats från 5.2 till 5.5, då det representerar 
+_avsevärda_ förbättringar. Om du letar efter en funktion eller dess användning, 
+finns svaret i dokumentationen för PHP på webbplatsen [php.net][php-docs].
 
 [php-release]: http://www.php.net/downloads.php
 [php-docs]: http://www.php.net/manual/en/
