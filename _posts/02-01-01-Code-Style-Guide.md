@@ -4,7 +4,7 @@ anchor: code_style_guide
 
 # Kodstilmall  {#code_style_guide_title}
 
-PHP-gemenskapen är stor och varierad, med oräkneligt antal bibliotek, ramverk och komponenter. Det är vanligt bland 
+PHP-gemenskapen är omfattande och varierad, med oräkneligt antal bibliotek, ramverk och komponenter. Det är vanligt bland 
 PHP-utvecklare att välja och vraka mellan dessa och kombinera dem i egna projekt. Det är därför viktigt att PHP-koder 
 följer (så troget som möjligt) vanliga kodstilar för att underlätta för utvecklare när de mixar och parar ihop bibliotek 
 i sina egna projekt.
@@ -12,7 +12,7 @@ i sina egna projekt.
 [Framework Interop Group][fig] har föreslagit och godkänt en serie rekommendationer. Inte alla relaterar till 
 kodstilar, men följande rekommendationer gör det: [PSR-0][psr0], [PSR-1][psr1], [PSR-2][psr2] och [PSR-4][psr4]. 
 Dessa rekommendationer är bara en uppsättning regler som projekt som Drupal, Zend, Symfony, CakePHP, phpBB, AWS 
-SDK, FuelPHP, Lithium, o.s.v. har börjar använda sig av. Du kan använda dem i dina egna projekt, eller fortsätta 
+SDK, FuelPHP, Lithium, o.s.v. har börjat använda sig av. Du kan använda dem i dina egna projekt, eller fortsätta 
 använda din egen personliga stil.
 
 Idealet är att du skriver PHP-koder som följer en känd standard. Det kan vara en kombination av PSR, eller en 
