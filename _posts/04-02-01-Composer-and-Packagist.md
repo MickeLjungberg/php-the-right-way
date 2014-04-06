@@ -9,18 +9,18 @@ Composer är en **briljant** beroendehanterare för PHP. Lista bara ditt projekt
 med några enkla kommandon kommer Composer att automatiskt ladda ner ditt projekts beroenden och ställa in autoladdning åt dig.
 
 Det finns redan en mängd PHP-bibliotek som är kompatibla med Composer, redo att användas i dina egna projekt.
-Dessa "paket" finns listade i [Packagist][1], det officiella arkivet för Composer-kompatible PHP-bibliotek.
+Dessa "paket" finns listade i [Packagist][1], det officiella arkivet för Composer-kompatibla PHP-bibliotek.
 
 ### Hur man installerar Composer
 
-Du kan installera Composer lokalt (i din arbetskatalog; fast detta inte rekommenderas) eller globalt (d.v.s. i /usr/local/bin). 
+Du kan installera Composer lokalt (i din arbetskatalog; ej rekommenderat) eller globalt (d.v.s. i /usr/local/bin). 
 Låt oss anta att du vill installera Composer lokalt. Från ditt projekts rootkatalog:
 
     curl -s https://getcomposer.org/installer | php
 
 Det kommandot kommer att ladda hem `composer.phar` (ett binärt PHP-arkiv). Du kan 
 köra detta med `php` för att hantera ditt projekts beroenden. <strong>Notera:</strong> 
-Om du skickar in nedladded kod direkt i tolken, försäkra dig först om att koden är säker genom att läsa den på nätet.
+Om du skickar in nedladded kod direkt i tolken (som ovan), försäkra dig först om att koden är säker genom att läsa den på nätet.
 
 #### Installation i Windows
 
@@ -33,10 +33,10 @@ kommandoraden i vilken katalog som helst.
 Att installera Composer manuellt är avancerat; dock finns det olika orsaker till varför en utvecklare kan tänkas föredra denna metod
 framför en interaktiv installationsrutin. Den interaktiva installationen undersöker PHP-installationen för att säkra följande:
 
-- en lämplig version av PHP används
+- att en lämplig version av PHP används
 - att `.phar`-filer kan köras korrekt
 - att tillräckliga åtkomsträttigheter är satta för vissa kataloger
-- att vissa, problematiska tillägg inte är laddade
+- att vissa problematiska tillägg inte är laddade
 - att vissa inställningar är gjorda i `php.ini`
 
 Då en manuell installation inte gör något av detta måste du bestämma dig om det är värt det för dig.
