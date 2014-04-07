@@ -2,4 +2,4 @@
 anchor: coding_practices
 ---
 
-# Coding Practices {#coding_practices_title}
+# Kodvanor {#coding_practices_title}

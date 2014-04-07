@@ -3,11 +3,11 @@ isChild: true
 anchor: the_basics
 ---
 
-## The Basics {#the_basics_title}
+## Grunderna {#the_basics_title}
 
-PHP is a vast language that allows coders of all levels the ability to produce code not only quickly, but efficiently. 
-However while advancing through the language, we often forget the basics that we first learnt (or overlooked) in favor 
-of short cuts and/or bad habits. To help combat this common issue, this section is aimed at reminding coders of the 
-basic coding practices within PHP.
+PHP är ett omfattande språk som inte bara gör det möjligt for programmerare att snabbt producera koder, men också 
+på ett effektivt sätt. Dock tenderar vi att glömma grunderna vi först lärde oss, genom att ta genvägar och/eller 
+utveckla dåliga vanor allteftersom vi blir mer och mer avancerade. Den här sektionen är tänkt att hjälpa programmerare 
+att tackla de här problemen genom att gå igenom grundläggande kodvanor för PHP.
 
-* Continue reading on [The Basics](/pages/The-Basics.html)
+* Fortsätt läsa om [grunderna](/pages/The-Basics.html)

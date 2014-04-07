@@ -3,15 +3,16 @@ isChild: true
 anchor: design_patterns
 ---
 
-## Design Patterns {#design_patterns_title}
+## Designmönster {#design_patterns_title}
 
-When you are building your application it is helpful to use common patterns in your code and common patterns for the
-overall structure of your project. Using common patterns is helpful because it makes it much easier to manage your code
-and lets other developers quickly understand how everything fits together.
+När du bygger din applikation underlättar det om du använder vanliga mönster i dina koder, och att du 
+strukturerar projektet som helhet efter vanliga mönster. Att använda vanliga mönster underlättar därför att 
+det blir mycket lättare att hantera dina koder, och gör det lättare för andra utvecklare att snabbt 
+förstå hur allting hänger ihop.
 
-If you use a framework then most of the higher level code and project structure will be based on that framework, so a
-lot of the pattern decisions are made for you. But it is still up to you to pick out the best patterns to follow in the
-code you build on top of the framework. If, on the other hand, you are not using a framework to build your application
-then you have to find the patterns that best suit the type and size of application that you're building.
+Om du använder ett ramverk kommer de flesta överliggande koderna och projektstrukturen att baseras på det 
+ramverket, så många val av mönster görs åt dig i så fall. Men du måste fortfarande välja mönster att följa 
+i de koder du skriver utöver ramverket. Om du däremot inte använder något ramverk för att bygga din applikation 
+så måste du hitta de mönster dom bäst passar applikationstypen och dess omfattning.
 
-* Continue reading on [Design Patterns](/pages/Design-Patterns.html)
+* Fortsätt att läsa om [designmönster](/pages/Design-Patterns.html)
