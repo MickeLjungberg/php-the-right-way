@@ -6,7 +6,7 @@ anchor: date_and_time
 ## Datum och tid{#date_and_time_title}
 
 I PHP finns klassen DateTime som hjälper dig när du ska läsa, skriva, jämföra eller 
-utföra beräkningar med datum och tider. Det finns många datum och tidrelaterade funktioner 
+utföra beräkningar med datum och tider. Det finns många datum och tidsrelaterade funktioner 
 i PHP förutom DateTime, men den här klassen ger dig ett trevligt objektorienterat gränssnitt
 för de vanligaste uppgifterna. Den kan hantera tidszoner, men det är bortom den här korta 
 introduktionen att ta upp.
