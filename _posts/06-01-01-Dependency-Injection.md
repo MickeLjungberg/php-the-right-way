@@ -3,12 +3,12 @@ title: Dependency Injection
 anchor: dependency_injection
 ---
 
-# Dependency Injection {#dependency_injection_title}
+# Behovsinjektion {#dependency_injection_title}
 
-From [Wikipedia](http://en.wikipedia.org/wiki/Dependency_injection):
+Från [Wikipedia](http://en.wikipedia.org/wiki/Dependency_injection):
 
-> Dependency injection is a software design pattern that allows the removal of hard-coded dependencies and makes it 
-> possible to change them, whether at run-time or compile-time.
+> Behovsinjektion är ett designmönster för mjukvara som underlättar avlägsnandet av hårdkodade kopplingar (behov) och gör det
+> möjligt att ändra dem, oavsett om det är under körning eller kompilering.
 
-This quote makes the concept sound much more complicated than it actually is. Dependency Injection is providing a component 
-with its dependencies either through constructor injection, method calls or the setting of properties. It is that simple.
+Det citatet får det att verka mycket mer komplicerat än det egentligen är. Behovsinjektion innebär att man skickar en komponent 
+med dess kopplingar till andra koder (behov) antingen via konstruktorn, metodanrop eller genom att sätta egenskaper. Så enkelt är det.

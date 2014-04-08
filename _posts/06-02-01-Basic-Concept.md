@@ -3,13 +3,13 @@ isChild: true
 anchor: basic_concept
 ---
 
-## Basic Concept {#basic_concept_title}
+## Grundläggande koncept {#basic_concept_title}
 
-We can demonstrate the concept with a simple, yet naive example.
+Vi kan demonstrera konceptet med ett enkelt exempel.
 
-Here we have a `Database` class that requires an adapter to speak to the database. We instantiate the
-adapter in the constructor and create a hard dependency. This makes testing difficult and means the `Database` class is
-very tightly coupled to the adapter.
+Här har vi klassen `Database` som kräver en adapter för att kommunicera med databasen. Vi kan skapa 
+adaptern inuti konstruktorn och därmed hårdkoda behovet. Med det gör det svårt att tests och betyder 
+dessutom att klassen `Database` är hårt kopplat till adaptern ifråga.
 
 {% highlight php %}
 <?php
@@ -28,7 +28,7 @@ class Database
 class MysqlAdapter {}
 {% endhighlight %}
 
-This code can be refactored to use Dependency Injection and therefore loosen the dependency.
+Den här koden kan skrivas om så att den använder behovsinjektion och därmed slipper vi dessa problem.
 
 {% highlight php %}
 <?php
@@ -47,6 +47,6 @@ class Database
 class MysqlAdapter {}
 {% endhighlight %}
 
-Now we are giving the `Database` class its dependency rather than it creating it itself. We could even create a method
-that would accept an argument of the dependency and set it that way, or if the `$adapter` property was `public` we could
-set it directly.
+Nu tilldelar vi klassen `Database` dess behov istället för att den själv skapar det direkt. Vi skulle också kunna skapa en metod
+som tar emot behovskopplingen som ett argument och lösa det på så sätt, eller om egenskapen `$adapter` var deklarerad som `public` 
+skulle vi kunna sätta den direkt.

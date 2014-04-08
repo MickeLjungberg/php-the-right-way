@@ -3,82 +3,84 @@ isChild: true
 anchor: php_and_utf8
 ---
 
-## PHP and UTF-8 {#php_and_utf8_title}
+## PHP och UTF-8 {#php_and_utf8_title}
 
-_This section was originally written by [Alex Cabal](https://alexcabal.com/) over at 
-[PHP Best Practices](https://phpbestpractices.org/#utf-8) and has now been shared here_.
+_Den här sektionen skrevs ursprungligen av [Alex Cabal](https://alexcabal.com/) hos 
+[PHP Best Practices](https://phpbestpractices.org/#utf-8)_.
 
-### There's no one-liner. Be careful, detailed, and consistent.
+### Det finns inga enradskoder. Var försiktig, noggrann och detaljerad.
 
-Right now PHP does not support Unicode at a low level. There are ways to ensure that UTF-8 strings are processed OK, 
-but it's not easy, and it requires digging in to almost all levels of the web app, from HTML to SQL to PHP. We'll aim 
-for a brief, practical summary.
+För tillfället finns inget lågnivåstöd för Unicode i PHP. Det finns metoder för försäkra sig om 
+att UTF-8-strängar behandlas korrekt, men de är inte enkla, och det kräver att man jobbar med 
+nästan alla nivåer i en webbapplikation, från HTML och SQL till PHP. Vi ämnar att ge en kortfattad, 
+praktisk sammanfattning.
 
-### UTF-8 at the PHP level
+### UTF-8 på PHP-nivån
 
-The basic string operations, like concatenating two strings and assigning strings to variables, don't need anything 
-special for UTF-8. However most string functions, like `strpos()` and `strlen()`, do need special consideration. These 
-functions often have an `mb_*` counterpart: for example, `mb_strpos()` and `mb_strlen()`. Together, these counterpart 
-functions are called the Multibyte String Functions. The multibyte string functions are specifically designed to 
-operate on Unicode strings.
+Grundläggande strängoperationer, som att sammanfoga två strängar och tilldela strängar till variabler, 
+kräver inte att UTF-8-strängar behandlas på något speciellt sätt. Däremot kräver de flesta strängfunktioner 
+(som `strpos()` och `strlen()`) speciell hänsyn. Dessa funktioner har ofta en motsvarighet i funktioner 
+med prefixet `mb_*`: till exempel, `mb_strpos()` och `mb_strlen()`. Sammantaget kallas dessa motsvariga 
+funktioner för flerbytesfunktioner för strängar. Dessa funktioner är utvecklare för att kunna hantera 
+just Unicodesträngar.
 
-You must use the `mb_*` functions whenever you operate on a Unicode string. For example, if you use `substr()` on a 
-UTF-8 string, there's a good chance the result will include some garbled half-characters. The correct function to use 
-would be the multibyte counterpart, `mb_substr()`.
+Du måste använda dessa `mb_*`-funktioner när du hanterar Unicodesträngar. Om du till exempel använder 
+`substr()` på en UTF-8-sträng, är chansen god att resultatet innehåller skräptecken. Den korrekta 
+funktionen att använda för att utföra samma operation på en UTF-8-sträng skulle vara `mb_substr()`.
 
-The hard part is remembering to use the `mb_*` functions at all times. If you forget even just once, your Unicode 
-string has a chance of being garbled during further processing.
+Det svåra är att alltid komma ihåg att använda `mb_*`-funktionerna. Om du glömmer det bara en enda 
+gång, är risken stor att dina Unicodesträngar blir till skräpsträngar när de bearbetas.
 
-Not all string functions have an `mb_*` counterpart. If there isn't one for what you want to do, then you might be out 
-of luck.
+Inte alla strängfunktioner har en motsvarighet med ett `mb_*`-prefix. Om en motsvarighet saknas för 
+den operation du behöver utföra, kan det hända att du får leva med det.
 
-Additionally, you should use the `mb_internal_encoding()` function at the top of every PHP script you write (or at the 
-top of your global include script), and the `mb_http_output()` function right after it if your script is outputting to 
-a browser. Explicitly defining the encoding of your strings in every script will save you a lot of headaches down the 
-road.
+Du bör också anropa funktionen `mb_internal_encoding()` överst i alla PHP-skript du skriver (eller 
+överst i ditt globala skript), direkt följt av ett anrop till `mb_http_output()` om ditt skript skickar
+utdata till en webbläsare. Att specifikt ange teckenkodningen i alla dina skript kan bespara dig 
+mycket huvudvärk längre fram.
 
-Finally, many PHP functions that operate on strings have an optional parameter letting you specify the character 
-encoding. You should always explicitly indicate UTF-8 when given the option. For example, `htmlentities()` has an 
-option for character encoding, and you should always specify UTF-8 if dealing with such strings.
+Slutligen har många PHP-funktioner som bearbetar strängar en valfri parameter via vilken du kan specificera 
+teckenkodningen. Du bör alltid ange UTF-8 när du ges valet. Till exempel har `htmlentities()` ett 
+alternativ för teckenkodning, och du bör alltid ange UTF-8 om du hanterar sådana strängar.
 
-Note that as of PHP 5.4.0, UTF-8 is the default encoding for `htmlentities()` and `htmlspecialchars()`.
+Värt att notera är att sedan version 5.4.0 av PHP är UTF-8 standardkodningen för 
+`htmlentities()` och `htmlspecialchars()`.
 
+### UTF-8 på databasnivån
 
-### UTF-8 at the Database level
+Om ditt skript använder MySQL finns det en risk att dina strängar inte sparas som UTF-8 i databasen 
+även om du följer alla råd ovan.
 
-If your PHP script accesses MySQL, there's a chance your strings could be stored as non-UTF-8 strings in the database 
-even if you follow all of the precautions above.
+För att försäkra dig om att dina strängar förblir UTF-8 när de skickas från PHP till MySQL ska du försäkra dig om 
+att din databas och dess tabeller alla är konfigurerade att använda teckenkodningen och kollationeringen `utf8mb4`, 
+samt att du använder teckenkodningen `utf8mb4` i dina PDO-strängar. Se exemplet nedan. Det här är _av största vikt_.
 
-To make sure your strings go from PHP to MySQL as UTF-8, make sure your database and tables are all set to the 
-`utf8mb4` character set and collation, and that you use the `utf8mb4` character set in the PDO connection string. See 
-example code below. This is _critically important_.
+Notera att du måste använda `utf8mb4`, och inte `utf8`, för fullständigt UTF-8-stöd. Läs vidare för en 
+förklaring varför!
 
-Note that you must use the `utf8mb4` character set for complete UTF-8 support, not the `utf8` character set! See 
-Further Reading for why.
+### UTF-8 på webbläsarnivån
 
-### UTF-8 at the browser level
-
-Use the `mb_http_output()` function to ensure that your PHP script outputs UTF-8 strings to your browser. In your HTML, 
-include the [charset `<meta>` tag](http://htmlpurifier.org/docs/enduser-utf8.html) in your page's `<head>` tag. 
+Använd funktionen  `mb_http_output()` för att försäkra dig om att dina PHP-skript skickar iväg 
+UTF-8-strängar till din webbläsare. I dina HTML-koders huvud (`<head>`) lägger du till [`<meta>`-taggen med charset-attributet](http://htmlpurifier.org/docs/enduser-utf8.html).
 
 {% highlight php %}
 <?php
-// Tell PHP that we're using UTF-8 strings until the end of the script
+// Berätta för PHP att vi använder UTF-8-strängar till skriptets slut
 mb_internal_encoding('UTF-8');
  
-// Tell PHP that we'll be outputting UTF-8 to the browser
+// Berätta för PHP att vi tänker skicka iväg UTF-8 till webbläsaren
 mb_http_output('UTF-8');
  
-// Our UTF-8 test string
+// Vår teststräng i UTF-8
 $string = 'Êl síla erin lû e-govaned vîn.';
- 
-// Transform the string in some way with a multibyte function
-// Note how we cut the string at a non-Ascii character for demonstration purposes
+
+// Transformera strängen på något sätt med en av flerbytesfunktionerna
+// Observera att vi klipper strängen vid ett tecken som inte är ASCII för demonstrationsändamål
 $string = mb_substr($string, 0, 15);
  
-// Connect to a database to store the transformed string
-// See the PDO example in this document for more information
-// Note the `set names utf8mb4` commmand!
+// Koppla upp mot en databas för att spara den transformerade strängen
+// Se PDO-exemplet i det här dokumentet för mer information
+// Observera kommandot `set names utf8mb4`!
 $link = new \PDO(   
                     'mysql:host=your-hostname;dbname=your-db;charset=utf8mb4',
                     'your-username',
@@ -89,19 +91,19 @@ $link = new \PDO(
                     )
                 );
  
-// Store our transformed string as UTF-8 in our database
-// Your DB and tables are in the utf8mb4 character set and collation, right?
+// Spara den transformerade strängen som UTF-8 i vår databas
+// Din databas och dess tabeller använder utf8mb4 som teckenkodning och kollationering, eller hur?
 $handle = $link->prepare('insert into ElvishSentences (Id, Body) values (?, ?)');
 $handle->bindValue(1, 1, PDO::PARAM_INT);
 $handle->bindValue(2, $string);
 $handle->execute();
  
-// Retrieve the string we just stored to prove it was stored correctly
+// Läs in strängen vi just sparade för att bekräfta att den sparades korrekt
 $handle = $link->prepare('select * from ElvishSentences where Id = ?');
 $handle->bindValue(1, 1, PDO::PARAM_INT);
 $handle->execute();
  
-// Store the result into an object that we'll output later in our HTML
+// Spara resultatet i ett objekt som vi skriver ut senare tillsammans med vår HTML
 $result = $handle->fetchAll(\PDO::FETCH_OBJ);
 ?><!doctype html>
 <html>
@@ -119,14 +121,14 @@ $result = $handle->fetchAll(\PDO::FETCH_OBJ);
 </html>
 {% endhighlight %}
 
-### Further reading
+### Vidare läsning
 
-* [PHP Manual: String Operations](http://php.net/manual/en/language.operators.string.php)
-* [PHP Manual: String Functions](http://php.net/manual/en/ref.strings.php)
+* [PHP-manualen: Strängoperationer](http://php.net/manual/en/language.operators.string.php)
+* [PHP-manualen: Strängfunktioner](http://php.net/manual/en/ref.strings.php)
     * [`strpos()`](http://php.net/manual/en/function.strpos.php)
     * [`strlen()`](http://php.net/manual/en/function.strlen.php)
     * [`substr()`](http://php.net/manual/en/function.substr.php)
-* [PHP Manual: Multibyte String Functions](http://php.net/manual/en/ref.mbstring.php)
+* [PHP-manualen: Flerbyte-strängfunktioner](http://php.net/manual/en/ref.mbstring.php)
     * [`mb_strpos()`](http://php.net/manual/en/function.mb-strpos.php)
     * [`mb_strlen()`](http://php.net/manual/en/function.mb-strlen.php)
     * [`mb_substr()`](http://php.net/manual/en/function.mb-substr.php)
@@ -134,8 +136,8 @@ $result = $handle->fetchAll(\PDO::FETCH_OBJ);
     * [`mb_http_output()`](http://php.net/manual/en/function.mb-http-output.php)
     * [`htmlentities()`](http://php.net/manual/en/function.htmlentities.php)
     * [`htmlspecialchars()`](http://www.php.net/manual/en/function.htmlspecialchars.php)
-* [PHP UTF-8 Cheatsheet](http://blog.loftdigital.com/blog/php-utf-8-cheatsheet)
-* [Stack Overflow: What factors make PHP Unicode-incompatible?](http://stackoverflow.com/questions/571694/what-factors-make-php-unicode-incompatible)
-* [Stack Overflow: Best practices in PHP and MySQL with international strings](http://stackoverflow.com/questions/140728/best-practices-in-php-and-mysql-with-international-strings)
-* [How to support full Unicode in MySQL databases](http://mathiasbynens.be/notes/mysql-utf8mb4)
-* [Brining Unicode to PHP with Portable UTF-8](http://www.sitepoint.com/bringing-unicode-to-php-with-portable-utf8/)
+* [PHP UTF-8 Fusklapp](http://blog.loftdigital.com/blog/php-utf-8-cheatsheet)
+* [Stack Overflow: Vilka faktorer är det som gör PHP inkompatibelt med Unicode?](http://stackoverflow.com/questions/571694/what-factors-make-php-unicode-incompatible)
+* [Stack Overflow: Hur man bäst jobbar med internationella strängar i PHP och MySQL](http://stackoverflow.com/questions/140728/best-practices-in-php-and-mysql-with-international-strings)
+* [Hur man använder fullt stöd för UTF-8 i MySQL-databaser](http://mathiasbynens.be/notes/mysql-utf8mb4)
+* [Använda Unicode i PHP med portabelt UTF-8](http://www.sitepoint.com/bringing-unicode-to-php-with-portable-utf8/)
